@@ -1,0 +1,29 @@
+---
+x-common: &x-common
+  build:
+    context: ./
+  init: true
+
+x-logging-options: &x-logging-options
+  splunk-format: json
+  splunk-index: $SPLUNK_INDEX
+  splunk-sourcetype: _json
+  splunk-token: $SPLUNK_TOKEN
+  splunk-url: $SPLUNK_URL
+  splunk-source: $SPLUNK_SOURCE
+
+services:
+  eos_information_collector:
+    <<:
+      - *x-common
+      - env_file:
+          - .credentials.env
+      - volumes:
+          - .:/usr/local/src
+      - logging:
+          driver: splunk
+          options:
+            <<:
+              - *x-logging-options
+
+version: "3.8"
