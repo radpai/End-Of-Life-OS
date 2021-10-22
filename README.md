@@ -1,6 +1,6 @@
 # End of life OS - Web Scraping using Scrapy and Data Ingestion Into Splunk for analytics/reporting
 
-This application uses Scrappy to scrape OS vendor websites namely - Ubuntu, CentOS, Windows, to fetch EOL dates for different versions of OS and ingests this data into Splunk which can be used to compare with existing OS versions for systems in the environment to find systems running EOL OS.
+Containerized application using Scrappy to scrape OS vendor websites namely - Ubuntu, CentOS, RHEL, Windows, to fetch EOL dates for different versions of OS and ingests this data into Splunk. This data can be used to compare with existing OS versions for systems in the environment to find systems running EOL OS.
 
 ## Executing the script
 
